@@ -25,6 +25,8 @@
     <router-link v-else :to="`/login`"
       ><button class="btn btn-outline-success">Signin to Register</button>
     </router-link>
+    <br /><br />
+    <router-view />
   </div>
 </template>
 
