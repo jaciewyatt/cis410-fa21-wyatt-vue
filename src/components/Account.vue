@@ -11,8 +11,8 @@
     <table v-if="webinarsByUser" class="table">
       <thead>
         <th>Title</th>
-        <th>Description</th>
-        <th>Category</th>
+        <th>Date</th>
+        <th>Length</th>
       </thead>
       <tbody>
         <tr v-for="thisWebinar in webinarsByUser" :key="thisWebinar.WebinarPK">
@@ -21,8 +21,8 @@
               thisWebinar.Title
             }}</router-link>
           </th>
-          <th>{{ thisWebinar.Description }}</th>
-          <th>{{ thisWebinar.Category }}</th>
+          <th>{{ thisWebinar.Date }}</th>
+          <th>{{ thisWebinar.Length }}</th>
         </tr>
       </tbody>
     </table>

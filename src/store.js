@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import axios from "axios";
 
 export default createStore({
   state: {
@@ -13,6 +14,16 @@ export default createStore({
     storeUserInApp(state, theUser) {
       state.user = theUser;
     },
+    storeWebinars(state, webinars) {
+      state.webinars = webinars;
+    },
   },
-  actions: {},
+  actions: {
+    getWebinars({ commit }) {
+      axios.get("/webinars").then((aResponse) => {
+        console.log("response in /movies", aResponse);
+        commit("storeWebinars", aResponse.data);
+      });
+    },
+  },
 });
